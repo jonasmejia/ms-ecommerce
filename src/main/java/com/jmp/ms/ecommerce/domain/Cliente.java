@@ -1,6 +1,5 @@
 package com.jmp.ms.ecommerce.domain;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.Column;
@@ -17,7 +16,7 @@ public class Cliente {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	@Column(unique = true)
 	private String dni;
 	private String nombres;
@@ -26,6 +25,6 @@ public class Cliente {
 	private String telefono;
 	private String direccion;
 	@OneToMany(mappedBy = "cliente")
-	private List<Pedido> pedido = new ArrayList<>();;
+	private List<Pedido> pedidos;
 	
 }
